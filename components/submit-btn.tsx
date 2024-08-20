@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
+import { motion } from "framer-motion";
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
@@ -15,8 +18,15 @@ export default function SubmitBtn() {
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
       ) : (
         <>
-          Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
+          Envoyer
+          <motion.div
+            className="text-xs opacity-70 transition-all"
+            whileHover={{ x: 5, y: -5, rotate: -15 }} // Animation au survol
+            whileTap={{ x: 100, y: -100, rotate: -45, opacity: 0 }} // Animation au clic
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <FaPaperPlane />
+          </motion.div>
         </>
       )}
     </button>

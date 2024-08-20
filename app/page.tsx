@@ -7,15 +7,36 @@ import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 
 export default function Home() {
-  return (
-    <main className="flex flex-col items-center px-4">
-      <Intro />
-      <SectionDivider />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Contact />
-    </main>
-  );
+	return (
+		<main className="flex flex-col items-center px-4">
+			<section id="intro">
+				<Intro />
+			</section>
+
+
+			<section id="about">
+				<About />
+			</section>
+
+
+			<section id="projects">
+				<Projects />
+			</section>
+
+
+			<section id="skills">
+				<Skills />
+			</section>
+
+
+			<section id="experience">
+				<Experience />
+			</section>
+
+
+			<section id="contact">
+				<Contact />
+			</section>
+		</main>
+	);
 }
