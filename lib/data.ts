@@ -66,27 +66,36 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
-		title: "Spotify",
-		description:
-			"Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
-		tags: ["React", "Tailwind", "Spotify API", "Framer Motion"],
-		imageUrl: spotifyImg,
+	  title: "Spotify",
+	  description:
+		"Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
+	  tags: ["React", "Tailwind", "Spotify API", "Framer Motion"] as const,
+	  imageUrl: spotifyImg.src,
+	  width: 500, 
+	  height: 300,
 	},
 	{
-		title: "Vineavici",
-		description:
-			" Une application de commerce électronique que j'ai construite pour un client. Les utilisateurs peuvent etre accompagnés par un sommelier virtuel.",
-		tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-		imageUrl: wineImg,
+	  title: "Vineavici",
+	  description:
+		"Une application de commerce électronique que j'ai construite pour un client. Les utilisateurs peuvent être accompagnés par un sommelier virtuel.",
+	  tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"] as const,
+	  imageUrl: wineImg.src,
+	  width: 500, 
+	  height: 300,
 	},
 	{
-		title: "X Copy",
-		description:
-			"Un clone de X Copy que j'ai construit . IL y a  toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
-		tags: ["React", "Symfony", "Tailwind", "GraphQL"],
-		imageUrl: xImg,
+	  title: "X Copy",
+	  description:
+		"Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
+	  tags: ["React", "Symfony", "Tailwind", "GraphQL"] as const,
+	  imageUrl: xImg.src,
+	  width: 500, 
+	  height: 300,
 	},
-] as const;
+  ] as const;
+  
+  
+
 
 export const skillsData = [
 	"HTML",
