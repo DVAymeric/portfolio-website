@@ -3,7 +3,6 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import spotifyImg from "@/public/spotify.jpeg";
-import wineImg from "@/public/wine.jpg";
 import xImg from "@/public/X.jpeg";
 import { IconBase } from "react-icons";
 
@@ -42,8 +41,17 @@ export const experiencesData = [
 		location: "Lyon, Auvergne-Rhône-Alpes, France",
 		description:
 			"Conception et développement de fonctionnalités pour le logiciel 'Optiwize' spécialisé dans l'optimisation technico-économique des projets d'énergies renouvelables et d'autoconsommation. Utilisation de React, Node.js, SQL, NoSQL. Maintenance, résolution de problèmes et participation aux réunions d'équipe pour améliorer le produit.",
-		icon: CgWorkAlt,
-	},
+			icon: CgWorkAlt,
+		},
+		{
+			title: "Développeur d'Applications Mobiles",
+			company: "Ekami",
+			duration: "Septembre 2023 - Décembre 2023 ",
+			location: "Lyon",
+			description:
+				"Conception et développement d'une application mobile visant à améliorer l'expérience de dégustation de vin. Utilisation de React Native, PostgreSQL, Supabase. Développement de la logique de l'application, création de composants graphiques, communication avec une API et gestion du store de données local (Redux).",
+			icon: FaReact,
+		},
 	{
 		title: "Développeur Web Fullstack",
 		company: "WEB@CADEMIE BY EPITECH",
@@ -53,49 +61,82 @@ export const experiencesData = [
 			"Formation intensive en développement web couvrant l'intégration HTML/CSS, PHP (Symfony, Laravel), JavaScript (React, Node.js) et les bases de données SQL/NoSQL. Réalisation de projets incluant la reproduction de Twitter en groupe et le développement d'une application solo similaire à Spotify.",
 		icon: LuGraduationCap,
 	},
-	{
-		title: "Développeur d'Applications Mobiles",
-		company: "Ekami",
-		duration: "Septembre 2023 - Décembre 2023 ",
-		location: "Lyon",
-		description:
-			"Conception et développement d'une application mobile visant à améliorer l'expérience de dégustation de vin. Utilisation de React Native, PostgreSQL, Supabase. Développement de la logique de l'application, création de composants graphiques, communication avec une API et gestion du store de données local (Redux).",
-		icon: FaReact,
-	},
 ] as const;
+
 
 export const projectsData = [
 	{
 	  title: "Spotify",
-	  description:
-		"Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
+	  description: "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
 	  tags: ["React", "Tailwind", "Spotify API", "Framer Motion"] as const,
 	  imageUrl: spotifyImg.src,
-	  width: 500, 
-	  height: 300,
+	  imageWidth: 800, // Width of the image
+	  imageHeight: 450, // Height of the image
+	  competencies: [
+		"Développement de composants React",
+		"Utilisation de Tailwind CSS",
+		"Intégration de l'API Spotify",
+		"Animation avec Framer Motion"
+	  ],
 	},
 	{
 	  title: "Vineavici",
-	  description:
-		"Une application de commerce électronique que j'ai construite pour un client. Les utilisateurs peuvent être accompagnés par un sommelier virtuel.",
+	  description: "Une application de commerce électronique que j'ai construite pour un client. Les utilisateurs peuvent être accompagnés par un sommelier virtuel.",
 	  tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"] as const,
-	  imageUrl: wineImg.src,
-	  width: 500, 
-	  height: 300,
+	  imageUrl: spotifyImg.src,
+	  imageWidth: 800, // Width of the image
+	  imageHeight: 450, // Height of the image
+	  competencies: [
+		"Développement avec Next.js",
+		"Gestion d'état avec Redux",
+		"Utilisation de TypeScript",
+		"Création d'une interface utilisateur interactive"
+	  ],
 	},
 	{
 	  title: "X Copy",
-	  description:
-		"Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
+	  description: "Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
 	  tags: ["React", "Symfony", "Tailwind", "GraphQL"] as const,
 	  imageUrl: xImg.src,
-	  width: 500, 
-	  height: 300,
+	  imageWidth: 800, // Width of the image
+	  imageHeight: 450, // Height of the image
+	  competencies: [
+		"Développement full-stack avec React et Symfony",
+		"Utilisation de GraphQL pour les requêtes",
+		"Conception de l'interface avec Tailwind CSS",
+		"Mise en place de la collaboration en temps réel"
+	  ],
+	},
+	{
+	  title: "BSQ",
+	  description: "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
+	  tags: ["React", "Tailwind", "Spotify API", "Framer Motion"] as const,
+	  imageUrl: spotifyImg.src,
+	  imageWidth: 800, // Width of the image
+	  imageHeight: 450, // Height of the image
+	  competencies: [
+		"Développement de composants React",
+		"Utilisation de Tailwind CSS",
+		"Intégration de l'API Spotify",
+		"Animation avec Framer Motion"
+	  ],
+	},
+	{
+	  title: "Les paniers de saisons",
+	  description: "Site vitrine pour une association de producteurs locaux. Les utilisateurs peuvent voir les produits disponibles, les paniers de saisons ainsi que commander en ligne.",
+	  tags: ["WordPress", "WooCommerce"] as const,
+	  imageUrl: spotifyImg.src,
+	  imageWidth: 800, // Width of the image
+	  imageHeight: 450, // Height of the image
+	  competencies: [
+		"Développement avec WordPress",
+		"Utilisation de WooCommerce pour les e-commerce",
+		"Création d'une interface utilisateur personnalisée",
+		"Gestion des commandes en ligne"
+	  ],
 	},
   ] as const;
   
-  
-
 
 export const skillsData = [
 	"HTML",
