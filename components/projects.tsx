@@ -43,11 +43,7 @@ export default function Projects() {
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
-          title={selectedProject.title}
-          description={selectedProject.description}
-          tags={selectedProject.tags}
-          imageUrl={selectedProject.imageUrl}
-          competencies={selectedProject.competencies}
+          {...selectedProject}
         />
       )}
     </section>

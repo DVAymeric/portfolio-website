@@ -66,77 +66,34 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
-	  title: "Spotify",
-	  description: "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
-	  tags: ["React", "Tailwind", "Spotify API", "Framer Motion"] as const,
-	  imageUrl: spotifyImg.src,
-	  imageWidth: 800, // Width of the image
-	  imageHeight: 450, // Height of the image
-	  competencies: [
-		"Développement de composants React",
-		"Utilisation de Tailwind CSS",
-		"Intégration de l'API Spotify",
-		"Animation avec Framer Motion"
-	  ],
-	},
-	{
-	  title: "Vineavici",
-	  description: "Une application de commerce électronique que j'ai construite pour un client. Les utilisateurs peuvent être accompagnés par un sommelier virtuel.",
-	  tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"] as const,
-	  imageUrl: spotifyImg.src,
-	  imageWidth: 800, // Width of the image
-	  imageHeight: 450, // Height of the image
-	  competencies: [
-		"Développement avec Next.js",
-		"Gestion d'état avec Redux",
-		"Utilisation de TypeScript",
-		"Création d'une interface utilisateur interactive"
-	  ],
-	},
+		title: "Spotify",
+		description: "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
+		tags: ["React", "Tailwind", "Spotify API", "Framer Motion"],
+		imageUrl: "/spotify.jpeg",
+		competencies: ["Développement frontend", "Intégration API", "Design responsive"],
+	  },
 	{
 	  title: "X Copy",
 	  description: "Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
-	  tags: ["React", "Symfony", "Tailwind", "GraphQL"] as const,
-	  imageUrl: xImg.src,
-	  imageWidth: 800, // Width of the image
-	  imageHeight: 450, // Height of the image
-	  competencies: [
-		"Développement full-stack avec React et Symfony",
-		"Utilisation de GraphQL pour les requêtes",
-		"Conception de l'interface avec Tailwind CSS",
-		"Mise en place de la collaboration en temps réel"
-	  ],
+	  tags: ["React", "Symfony", "Tailwind", "GraphQL"],
+	  imageUrl: "/X.jpeg",
+	  competencies: ["Développement fullstack", "Temps réel", "Gestion de documents"],
 	},
 	{
 	  title: "BSQ",
-	  description: "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
-	  tags: ["React", "Tailwind", "Spotify API", "Framer Motion"] as const,
-	  imageUrl: spotifyImg.src,
-	  imageWidth: 800, // Width of the image
-	  imageHeight: 450, // Height of the image
-	  competencies: [
-		"Développement de composants React",
-		"Utilisation de Tailwind CSS",
-		"Intégration de l'API Spotify",
-		"Animation avec Framer Motion"
-	  ],
+	  description: "Un projet algorithmique complexe impliquant la recherche du plus grand carré dans une grille avec des obstacles.",
+	  tags: ["C", "Algorithmes", "Optimisation"],
+	  imageUrl: "/bsq.jpg",
+	  competencies: ["Programmation bas niveau", "Optimisation algorithmique", "Résolution de problèmes"],
 	},
 	{
 	  title: "Les paniers de saisons",
 	  description: "Site vitrine pour une association de producteurs locaux. Les utilisateurs peuvent voir les produits disponibles, les paniers de saisons ainsi que commander en ligne.",
-	  tags: ["WordPress", "WooCommerce"] as const,
-	  imageUrl: spotifyImg.src,
-	  imageWidth: 800, // Width of the image
-	  imageHeight: 450, // Height of the image
-	  competencies: [
-		"Développement avec WordPress",
-		"Utilisation de WooCommerce pour les e-commerce",
-		"Création d'une interface utilisateur personnalisée",
-		"Gestion des commandes en ligne"
-	  ],
+	  tags: ["WordPress", "WooCommerce"],
+	  imageUrl: "/panier.jpg",
+	  competencies: ["Développement WordPress", "E-commerce", "Personnalisation de thème"],
 	},
   ] as const;
-  
 
 export const skillsData = [
 	"HTML",

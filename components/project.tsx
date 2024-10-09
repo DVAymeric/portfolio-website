@@ -1,19 +1,10 @@
-// components/project.tsx
-
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ProjectProps } from "@/lib/types";
+import { PROJECT_IMAGE_WIDTH, PROJECT_IMAGE_HEIGHT } from "@/lib/constants";
 
-type ProjectProps = {
-  title: string;
-  description: string;
-  tags: ReadonlyArray<string>;
-  imageUrl: string;
-  imageWidth: number;
-  imageHeight: number;
-};
-
-export default function Project({ title, description, tags, imageUrl, imageWidth, imageHeight }: ProjectProps) {
+export default function Project({ title, description, tags, imageUrl }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
   
@@ -25,11 +16,20 @@ export default function Project({ title, description, tags, imageUrl, imageWidth
       style={{ opacity: opacityProgress }}
       className="group mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="relative flex flex-col sm:flex-row bg-gray-100 dark:bg-white/10 border border-black/5 rounded-lg overflow-hidden transition hover:bg-gray-200 dark:hover:bg-white/20">
-        <div className="flex flex-col p-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%]">
+      <section className="relative flex flex-col bg-gray-100 dark:bg-white/10 border border-black/5 rounded-lg overflow-hidden transition hover:bg-gray-200 dark:hover:bg-white/20">
+        <div className="relative w-full h-[200px] sm:h-[300px]">
+          <Image
+            src={imageUrl}
+            alt={`Screenshot of ${title} project`}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-t-lg shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-y-3 group-hover:-rotate-2"
+          />
+        </div>
+        <div className="flex flex-col p-5 sm:p-6">
           <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 text-gray-700 dark:text-white/70 leading-relaxed">{description}</p>
-          <ul className="flex flex-wrap gap-2 mt-4 sm:mt-auto">
+          {/* <p className="mt-2 text-gray-700 dark:text-white/70 leading-relaxed">{description}</p> */}
+          <ul className="flex flex-wrap gap-2 mt-4">
             {tags.map((tag, index) => (
               <li
                 key={index}
@@ -40,14 +40,6 @@ export default function Project({ title, description, tags, imageUrl, imageWidth
             ))}
           </ul>
         </div>
-
-        <Image
-          src={imageUrl}
-          alt={`Screenshot of ${title} project`}
-          width={imageWidth}
-          height={imageHeight}
-          className="hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2"
-        />
       </section>
     </motion.div>
   );
