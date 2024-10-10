@@ -22,6 +22,7 @@
     "framer-motion": "^10.18.0",
     "next": "13.4.8",
     "node": "^22.8.0",
+    "pixi.js": "^8.5.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
