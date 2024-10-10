@@ -1,48 +1,65 @@
+// components/skills.tsx
 "use client";
 
-import React, { useMemo } from "react";
-import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
+import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import SectionHeading from "./section-heading";
+import { skillsData, Skill } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+import SkillItem from "./skillItem";
+
+interface SkillRowProps {
+  skills: Skill[];
+  rowIndex: number;
+}
+
+const SkillRow: React.FC<SkillRowProps> = ({ skills, rowIndex }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay: rowIndex * 0.2 }}
+      className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8"
+    >
+      {skills.map((skill) => (
+        <SkillItem key={skill.name} name={skill.name} icon={skill.icon} color={skill.color} />
+      ))}
+    </motion.div>
+  );
+};
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
 
-  // Mémoriser les variantes d'animation pour éviter de les recréer à chaque rendu
-  const fadeInAnimationVariants = useMemo(() => {
-    return {
-      initial: { opacity: 0, y: 100 },
-      animate: (index: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: 0.05 * index },
-      }),
-    };
+  const skillRows: Skill[][] = skillsData.reduce((rows: Skill[][], skill: Skill, index: number) => {
+    if (index % 4 === 0) {
+      rows.push([]);
+    }
+    rows[rows.length - 1].push(skill);
+    return rows;
   }, []);
 
   return (
     <section
-      id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-900"
     >
-      <SectionHeading>Mes compétences</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 dark:text-white/80">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10"
-            key={skill} // Utilisation du nom de la compétence comme clé
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            custom={index} // Utilisation directe de l'index
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading>Mes compétences</SectionHeading>
+        <div className="mt-12">
+          {skillRows.map((row, rowIndex) => (
+            <SkillRow key={rowIndex} skills={row} rowIndex={rowIndex} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
