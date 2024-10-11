@@ -17,18 +17,23 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>Parcours & Passion</SectionHeading>
-      <p className="mb-3">
-        Après une exploration enrichissante de divers horizons professionnels, j'ai trouvé ma véritable vocation dans le 
-        <span className="font-medium"> développement web</span>. Cette découverte m'a conduit à la 
-        <span className="font-medium"> Web@cadémie by EPitech</span>, où j'ai plongé dans l'univers fascinant du 
+      <SectionHeading>Parcours</SectionHeading>
+
+      <p className="mb-3 text-align: justify">
+        Après une exploration enrichissante de divers horizons professionnels,
+        j'ai trouvé ma véritable vocation dans le
+        <span className="font-medium"> développement web</span>. Cette
+        découverte m'a conduit à la
+        <span className="font-medium"> Web@cadémie by EPitech</span>, où j'ai
+        plongé dans l'univers fascinant du
         <span className="font-medium"> développement full-stack</span>.
       </p>
       <p>
-        Ce qui me passionne le plus dans ce domaine, c'est la 
-        <span className="italic"> résolution de problèmes complexes</span>. Chaque défi est une opportunité d'apprentissage, 
-        et la satisfaction de trouver une solution élégante est incomparable. Cette quête constante d'innovation et 
-        d'amélioration guide chacun de mes projets.
+        Ce qui me passionne le plus dans ce domaine, c'est la
+        <span className="italic"> résolution de problèmes complexes</span>.
+        Chaque défi est une opportunité d'apprentissage, et la satisfaction de
+        trouver une solution élégante est incomparable. Cette quête constante
+        d'innovation et d'amélioration guide chacun de mes projets.
       </p>
     </motion.section>
   );

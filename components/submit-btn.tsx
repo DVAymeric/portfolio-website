@@ -21,8 +21,8 @@ export default function SubmitBtn() {
           Envoyer
           <motion.div
             className="text-xs opacity-70 transition-all"
-            whileHover={{ x: 5, y: -5, rotate: -15 }} // Animation au survol
-            whileTap={{ x: 100, y: -100, rotate: -45, opacity: 0 }} // Animation au clic
+            whileHover={{ x: 5, y: -5, rotate: -15 }}
+            whileTap={{ x: 100, y: -100, rotate: -45, opacity: 0 }} 
             transition={{ type: "spring", stiffness: 300 }}
           >
             <FaPaperPlane />

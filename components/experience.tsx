@@ -36,24 +36,29 @@ export default function Experience() {
     <motion.section
       id="experience"
       ref={ref}
-      className="scroll-mt-28 mb-28 sm:mb-40"
+      className="scroll-mt-28 mb-28 sm:mb-40 relative"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
       <SectionHeading>Mon expérience</SectionHeading>
+      
+      {/* Trait vertical */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200 dark:bg-gray-700 z-0" />
+
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <VerticalTimelineElement
-            key={index} // Utiliser un identifiant unique si disponible
+            key={index} 
             contentStyle={contentStyles}
             contentArrowStyle={arrowStyles}
             iconStyle={{
               background: isLightTheme ? "white" : "rgba(255, 255, 255, 0.15)",
               color: isLightTheme ? "black" : "white",
+              zIndex: 10,
             }}
-            icon={<item.icon />} // Rendre l'icône en tant que composant React
+            icon={<item.icon />}
           >
             <h3 className="font-semibold capitalize">{item.title}</h3>
             <p className="font-normal !mt-0">{item.company}</p>

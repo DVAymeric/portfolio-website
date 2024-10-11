@@ -12,6 +12,7 @@ type ModalProps = {
   title: string;
   description: string;
   tags: ReadonlyArray<string>;
+  host: string;
   imageUrl: string;
   competencies: ReadonlyArray<string>;
 };
@@ -22,6 +23,7 @@ const Modal: React.FC<ModalProps> = ({
   title,
   description,
   tags,
+  host,
   imageUrl,
   competencies,
 }) => {
@@ -108,6 +110,18 @@ const Modal: React.FC<ModalProps> = ({
                   />
                 </div>
                 <p className="text-lg">{description}</p>
+                <a
+                  href={host}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={` px-4 py-2 rounded-full justify-end ${
+                    isDarkTheme
+                      ? "bg-gray-700 text-gray-200"
+                      : "bg-gray-200 text-gray-800"
+                  }`}
+                >
+                  Voir le projet
+                </a>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
                     Technologies utilisées

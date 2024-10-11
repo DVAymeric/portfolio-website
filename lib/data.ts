@@ -102,6 +102,7 @@ export const projectsData = [
 	  description: "Site vitrine pour une association de producteurs locaux. Les utilisateurs peuvent voir les produits disponibles, les paniers de saisons ainsi que commander en ligne.",
 	  tags: ["WordPress", "WooCommerce"],
 	  imageUrl: "/panier.jpg",
+	  host: "https://lepanierdessaisons.fr/",
 	  competencies: ["Développement WordPress", "E-commerce", "Personnalisation de thème", "SEO"],
 	},
 	{

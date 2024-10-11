@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 type SectionHeadingProps = {
   children: React.ReactNode;
-  className?: string; // Ajout de `className` pour une personnalisation supplémentaire
+  className?: string; 
 };
 
 const SectionHeading: FC<SectionHeadingProps> = ({ children, className = "" }) => {
